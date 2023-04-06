@@ -1,3 +1,8 @@
+### Antes de empezar
+
+Muchos de los servicios de AWS tienen costo por su uso, por eso es recomendable crear alertas de cobro en la sección **panel de facturación - budgets - create a budget**
+
+
 # Servicios de interés
 
 ### Protección a Datos
@@ -22,10 +27,13 @@
 - AWS Servicio de Directorio, implementa y administra un Active Directory Service
 - AWS Organizaciones, para gobernar y administrar de forma centralizada en un mismo lugar
 
+### Tecnologías
+- s3, permite el almacenamiento de archivos estáticos (html, css, javascript, images etc). sin embargo también permite servir sitios estáticos y redirigir a otros buckets.
+- Route 53, redirige nuestro dominio hacia un lugar especificado
 
 # Identity and Access Management
 
-Es un servicio que ayuda a administrar quien puede acceder y a que recursos en nuestra cuenta de Aws, podremos crear usuarios y grupos, y establecer permisos para poder denegar o permitir el acceso a los recursos mediante el uso de políticas. Este es un servicio gratuito.
+Es un servicio que ayuda a **administrar quién puede acceder y a qué recursos en nuestra cuenta de Aws**, podremos crear usuarios y grupos, y establecer permisos para poder denegar o permitir el acceso a los recursos mediante el uso de políticas. Este es un servicio gratuito.
 
 Entre las características principales están los usaurios y los roles:
 - Cuando creamos la cuenta, el usuario root va a ser el que pueda acceder a todos los recursos de la cuenta aws. Esta cuenta va a poder crear mas usuarios
@@ -52,4 +60,18 @@ Entre las características principales están los usaurios y los roles:
         },
     ]
 }
+```
+
+# AWS Secrets Manager
+Cuando queremos conectarnos a algún servicio que requiera autenticación, es común ver las contraseñas quemadas en el código. Esto es un riesgo de seguridad, y también resulta dificil a la hora de hacer rotación de contraseñas.
+
+Para eso está este servicio, nos ayuda a proteger los secretos necesarios para acceder a aplicaciones, servicios y recursos. También podrá rotarlo automáticamente.
+
+```python
+import mysql.connector
+connection = mysql.connector.connect(
+    host="localhost", database="mydb", user="root", 
+    # en lugar de quemar la contraseña llamamos el servicio de AWS
+    password=get_secret_value["SecretString"] 
+)
 ```
