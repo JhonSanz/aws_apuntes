@@ -21,3 +21,35 @@
 - AWS administra la identidad dentro de las aplicaciones, se puede hacer el inicio de sesiones moviles
 - AWS Servicio de Directorio, implementa y administra un Active Directory Service
 - AWS Organizaciones, para gobernar y administrar de forma centralizada en un mismo lugar
+
+
+# Identity and Access Management
+
+Es un servicio que ayuda a administrar quien puede acceder y a que recursos en nuestra cuenta de Aws, podremos crear usuarios y grupos, y establecer permisos para poder denegar o permitir el acceso a los recursos mediante el uso de políticas. Este es un servicio gratuito.
+
+Entre las características principales están los usaurios y los roles:
+- Cuando creamos la cuenta, el usuario root va a ser el que pueda acceder a todos los recursos de la cuenta aws. Esta cuenta va a poder crear mas usuarios
+- Las políticas generalmente se crean en la consola de IAM mediante un archivo de configuración, por ejemplo:
+```json
+// Se toma como ejemplo los buckets de s3, servicio para almacenar archivos
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3.ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::bucket-name",
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3.GetObject"
+                "s3.PutObject"
+            ],
+            "Resource": "arn:aws:s3:::bucket-name/*",
+        },
+    ]
+}
+```
