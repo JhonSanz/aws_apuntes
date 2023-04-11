@@ -61,6 +61,9 @@ Facturacion por milisegundos. El precio depende del uso de RAM
 ---
 
 # S3
+
+> Generador de políticas: https://awspolicygen.s3.amazonaws.com/policygen.html
+
 Almacenamiento de objetos. Garantía de no perdida del 99.999999999%
 
 - S3 Standard: ofrece almacenamiento de objetos de alta durabilidad, disponibilidad y rendimiento para datos a los que se obtiene acceso con frecuencia
@@ -69,3 +72,29 @@ Almacenamiento de objetos. Garantía de no perdida del 99.999999999%
 - S3 Glacier: clase de almacenamiento de archivos que ofrece el almacenamiento de menor costo para los datos de larga duración a los que rara vez se accede. Se tarde entre 12h y 48h para su recuperación. $1/TB/month
 - S3 Glacier Deep Archive: es la clase de almacenamiento más económica de Amazon S3, y admite la retención a largo plazo y la conservación digital de datos a los que se accede una o dos veces al año
 S3 Intelligent-Tiering es un nuevo tipo de almacenamiento de Amazon S3 diseñado para los clientes que deseen optimizar los costos de almacenamiento automáticamente cuando los patrones de acceso a los datos cambian, sin afectar el rendimiento o la sobrecarga operativa
+
+---
+
+# Amazon Elastic File System (EFS)
+Brinda un sistema de archivos de red, que permite acceder a archivos y directorios que no están en el sistema pero están conectados en la red. 
+
+- Altamente disponible y duradero.
+- EFS ha incorporado protección contra una interrupción de la zona de disponibilidad
+- Tipos: brinda un sistema de archivos elástico sencillo, sin servidor y práctico. Sin tarifa mínima ni cargo de contratación.
+        - Standar
+        - Standar IA: Acceso poco frecuente
+- Escala a medida que se agregan o eliminan archivos, lo cual evita la administración del disco
+- Encriptación de forma predeterminada
+
+---
+
+# AWS Storage Gateway
+Brinda acceso a almacenamiento en la nube prácticamente ilimitado desde nuestra propia infraestructura.
+
+- File Gateway: Te brinda interfaces SMB y NFS para amazon S3, tanto en windows como en linux. Gracias a esto podemos guardar archivos a S3 como si se tratara de guardar archivos locales. Los archivos S3 luego pueden ser usados por cualquier servicio de AWS.
+- Tape Gateway: Migrar copias de seguridad o respaldo
+- Volume Gateway: en bloque iSCSI , tanto almacenado como en caché. Con baja latencia.
+
+---
+
+
