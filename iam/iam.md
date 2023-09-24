@@ -42,6 +42,19 @@ Es una manera de establecer el formato que deben tener las contraseñas de los u
 # Roles
 Los roles son un conjunto de permisos que se pueden asignar a un servicio de amazon, por ejemplo a una instancia EC2, a un lambda, etc. Estos se pueden asignar de manera temporal, para que el servicio pueda realizar una tarea especifica y luego se le retiren los permisos.
 
+1. Entrando a IAM y dando click en roles en el menú izquierdo
+2. Seleccionamos un caso de uso, por ejemplo EC2
+3. Alegimos una política por ejemplo S3FullAccess
+4. Asignamos un nombre al rol y creamos y los tags que queramos
+5. Ahora podemos asignar este rol a una instancia EC2, y esta tendrá los permisos de la policy asignada. Para esto seleccionamos nuestra EC2, click en seguridad y Modificar rol de IAM
+6. Le agregamos el rol que creamos previamente
+7. Ahora podemos conectarnos a la instancia y probar que tenemos acceso a S3. Mediante el cloudShell y nos conectamos a la maquina EC2
+8. Ejecutamos el comando 
+```bash
+aws s3 ls
+```
+9. Y así comprobamos que tenemos acceso a S3, ya que se listarán nuestros buckets
+
 # Buenas practicas
 Se recomienda utilizar el usuario root solo para crear usuarios, grupos, roles y policies. Luego utilizar los usuarios creados para realizar las tareas de administración.
 
