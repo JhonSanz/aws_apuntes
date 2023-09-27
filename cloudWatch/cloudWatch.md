@@ -25,4 +25,6 @@ En la imagen estamos con una ventana de tiempo de 5 minutos y para que se active
 9. Finamente agregamos un nombre y descripcion para la notificación.
 10. Podemos agregar esta alarma a nuestro panel de CloudWatch
 
-# 
+# Eventos
+Los eventos se pueden utilizar a modo de disparador cuando se cumple alguna condición. También es posible crear tareas programadas estilo crontab de linux, para que ejecuten alguan acción. Un ejemplo sería crear un backup todos los dias a las 12:00 am, o ejecutar una función lambda al superar cierto umbral de requests.
+
