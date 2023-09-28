@@ -1,4 +1,6 @@
 # Que es
+**"Having your own network in the cloud"**
+
 Cuando creamos una cuenta de amazon esta viene con una VPC por defecto. Por ejemplo al entrar a EC2 podemos ver que en el formulario de creación de las instancias nos pide seleccionar una VPC, una subred, una IP etc.
 
 VPC significa virtual private cloud, es una red propia en la nube. Es importante tener en cuenta que todos los recursos que lanzamos en amazon **viven** en **zonas de disponibilidad**. Las zona de disponibilidad son datacenters que pueden estar dispersos geográficamente en una región.
@@ -16,3 +18,13 @@ Y finalmente toda la comunicación a internet se hace a través del Internet Gat
 Podemos controlar el acceso a nuestras redes y recursos a través de security groups, los cuales se crean dentro de la VPC, que funcionan básicamente como un firewall. ¿Qué trafico puede entrar a esta red? para eso creamos las NACLs (Network Access Control List) que son listas de control de acceso a la red.
 
 ![controlling_access](controlling_access.png)
+
+En estos esquemas VPC incluso se puede controlar el routing de la red. Por ejemplo podemos decir si el tráfico puede entrar o salir de la VPC etc. También se puede controlar la asignación de ips publicas.
+
+Debido a eso en muchos esquemas y diagramas de arquitecturas cloud están divididos en VPCs, por ejemplo una VPC para los servidores con base de datos y otra para los servidores de aplicaciones.
+
+![public_private_vpc](public_private_vpc.png)
+
+¿Qué pasaría entonces por ejemplo si necesitaramos actualizar el software de las máquinas dentro de la subred privada?, aws ofrece una solución mediante NAT Gateway (Network Address Translation) el cual traduce las ip internas en publicas.
+
+Ahora creemos nuestro esquema 😉
