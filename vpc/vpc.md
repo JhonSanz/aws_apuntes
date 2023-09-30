@@ -1,11 +1,14 @@
 # Que es
-**"Having your own network in the cloud"**
+**"Having your own network (or datacenter) in the cloud"**
+
+![overview](overview.png)
+![concepts](concepts.png)
 
 Cuando creamos una cuenta de amazon esta viene con una VPC por defecto. Por ejemplo al entrar a EC2 podemos ver que en el formulario de creación de las instancias nos pide seleccionar una VPC, una subred, una IP etc.
 
 VPC significa virtual private cloud, es una red propia en la nube. Es importante tener en cuenta que todos los recursos que lanzamos en amazon **viven** en **zonas de disponibilidad**. Las zona de disponibilidad son datacenters que pueden estar dispersos geográficamente en una región.
 
-En la imagen se puede observar que la VPC es una red que abarca toda la region y permite de esta manera que los recursos puedan cominarse entre si a pesar de que vivan en diferentes zonas de disponibilidad. De la misma manera estos recursos necesitan conectarse a internet. Es por eso que por defecto nuestra cuenta viene con una VPC creada.
+En la imagen se puede observar que la VPC es una red que abarca toda la region y permite de esta manera que los recursos puedan comunicarse entre si a pesar de que vivan en diferentes zonas de disponibilidad. De la misma manera estos recursos necesitan conectarse a internet. Es por eso que por defecto nuestra cuenta viene con una VPC creada.
 
 Las suberedes de la imagen son subredes privadas **dentro** de la VPC, las cuales pueden ser cada zona des disponibilidad. Es como una subred en la subred. La VPC tiene un rango de direcciones que se divide entre las zonas de disponibilidad y luego cada una de ellas hereda un fragmento de ese rango direcciones de la VPC.
 
@@ -28,3 +31,14 @@ Debido a eso en muchos esquemas y diagramas de arquitecturas cloud están dividi
 ¿Qué pasaría entonces por ejemplo si necesitaramos actualizar el software de las máquinas dentro de la subred privada?, aws ofrece una solución mediante NAT Gateway (Network Address Translation) el cual traduce las ip internas en publicas.
 
 Ahora creemos nuestro esquema 😉
+
+
+# Security Group
+
+Es un Firewall virtual. Su objetivo es bloquear todo el trafico excepto los puertos, protocolos y fuentes que se especifiquen.
+
+Ejemplos de fuentes pueden ser un rango de IPs, otra red, otro security group etc.
+
+Se pueden definir reglas para el trafico de entrada y salida.
+
+ 

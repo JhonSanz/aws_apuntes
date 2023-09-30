@@ -1,6 +1,6 @@
 # ip
 
-¿Qué es? es un número binario de 32 bits. Se dividen en bytes (8 bits)
+¿Qué es? es un número binario de 32 bits que utilizan los aparatos para comunicarse unos con otros. Se dividen en bytes (8 bits)
 entonces la direccion IP está conformada por 4 bytes.
 
 ejemplo
@@ -77,6 +77,7 @@ algo muy importante es que debido a las clasificaciones A, B y C, hay direccione
 
 ![most_significative_bit](most_significative_bit.png)
 
+![private_networks](private_networks.png)
 es por eso que por ejemplo en las de clase A no hay 2^8 = 256 posibles redes sino 2^7 = 128, porque el bit mas significativo está reservado para identificar la clase de red.
 
 # Subredes
@@ -146,3 +147,25 @@ Veamos un ejemplo con la útlma subred
 |2| 192 | 168 | 100 | 111000<ins>10</ins> = 226 |
 |3| 192 | 168 | 100 | 111000<ins>11</ins> = 227 |
 ||||||
+
+![ejemplo_subnetting](ejemplo_subnetting.png)
+
+# CIDR
+
+Classless Inter-Domain Routing o Enrutamiento entre dominios sin clases.
+
+Es un método para asignar direcciones IP y enrutar el tráfico IP. Reemplazó al sistema de clases anterior que se basaba simplemente en la clase de la dirección IP.
+
+Los enrutadores **incluyen en su operacion la mascara de subred** para determinar si una dirección IP pertenece a la misma red que la dirección IP de destino. Esto permite mas flexibilidad a la hora de asignar direcciones y se gasta menos bits para saber la clase de una dirección (lo cual se hacia viendo el primer octeto).
+
+https://cidr.xyz
+
+![cidr_example](cidr_example.png)
+
+En este ejemplo podemos ver la forma en que la clase es ignorada, y simplemente nos fijamos en la mascara. El proceso funciona de forma similar, contando los bits de la mascara, y prestando bits de host para crear subredes.
+
+# VLSM
+
+Variable Length Subnet Masking o Máscara de subred de longitud variable. Aqui podremos poner en práctica todo lo aprendido con un ejemplo en que se le hacen **subredes a las subredes** ahorrándonos el desperdicio de direcciones.
+
+
