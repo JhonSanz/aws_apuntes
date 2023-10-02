@@ -59,4 +59,25 @@ En la imagen podemos ver que las redes públicas tienen en su Route Table MAIN, 
 
 # NAT Gateway
 1. Creamos el nat gateway para que nuestra subred privada pueda conectarse a internet, el truco es que NAT gateway bloquea el tráfico que viene desde internet, pero permite que el tráfico salga hacia internet. Esto es [autoadministrado](https://www.youtube.com/watch?v=ujXr0i5EoHE) por AWS así que no debemos preocuparnos, solo hay que crearlo. 
-2. 
+2. Click en crear NAT Gateway, y asignamos un nombre
+3. Algo importante es seleccionar una **subred pública** para que pueda existir tráfico desde internet
+4. Conectividad pública
+5. Click en asignar IP elástica y crear
+6. Volvemos a las tablas de enrutamiento, seleccionamos la tabla de enrutamiento privada
+7. Vamos a rutas y editar, agregamos una nueva ruta
+8. Asignamos la ruta de internet 0.0.0.0/0 al target Nat gateway, y ahí seleccionamos el que creamos previamente
+
+# Security Groups
+1. Actuan como un firewall virtual. Seleccionamos la opción de crear security group
+2. Asignamos un nombre y una descripción, y seleccionamos nuestra VPC
+3. Por ahora para ambas las reglas de entrada y salida, permitiremos todo el tráfico
+4. Click en crear
+
+
+Para probar todo lo que hemos hecho podemos crear algunas instancias EC2 y hacer ping entre ellas y a alguna web de internet. Mediante el CLI de amazon podemos crearlas
+
+```bash
+aws ec2 run-instances --image-id <value> --instance-type <value> --security-group-ids <value> --subnet-id <value> --key-name <value> --user-data <value>
+```
+
+Podemos ver que podemos asignar nuestro grupo de seguridad y la subred a la cual pernetecerá nuestra instancia.
