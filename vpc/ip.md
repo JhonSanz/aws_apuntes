@@ -75,9 +75,9 @@ Ahora esto en decimal es
 
 algo muy importante es que debido a las clasificaciones A, B y C, hay direcciones que no se pueden usar, por ejemplo las que empiezan con 0, 10, 127, 255, etc. Estas direcciones son reservadas para usos especiales. Y también se asignó el bit mas significativo de cada clase de la siguiente manera
 
-![most_significative_bit](most_significative_bit.png)
+![most_significative_bit](img/most_significative_bit.png)
 
-![private_networks](private_networks.png)
+![private_networks](img/private_networks.png)
 es por eso que por ejemplo en las de clase A no hay 2^8 = 256 posibles redes sino 2^7 = 128, porque el bit mas significativo está reservado para identificar la clase de red.
 
 # Subredes
@@ -148,7 +148,7 @@ Veamos un ejemplo con la útlma subred
 |3| 192 | 168 | 100 | 111000<ins>11</ins> = 227 |
 ||||||
 
-![ejemplo_subnetting](ejemplo_subnetting.png)
+![ejemplo_subnetting](img/ejemplo_subnetting.png)
 
 # CIDR
 
@@ -160,7 +160,7 @@ Los enrutadores **incluyen en su operacion la mascara de subred** para determina
 
 https://cidr.xyz
 
-![cidr_example](cidr_example.png)
+![cidr_example](img/cidr_example.png)
 
 En este ejemplo podemos ver la forma en que la clase es ignorada, y simplemente nos fijamos en la mascara. El proceso funciona de forma similar, contando los bits de la mascara, y prestando bits de host para crear subredes.
 
@@ -168,4 +168,4 @@ En este ejemplo podemos ver la forma en que la clase es ignorada, y simplemente 
 
 Variable Length Subnet Masking o Máscara de subred de longitud variable. Aqui podremos poner en práctica todo lo aprendido con un ejemplo en que se le hacen **subredes a las subredes** ahorrándonos el desperdicio de direcciones.
 
-![vlsm_example](vlsm_example.jpg)
+![vlsm_example](img/vlsm_example.jpg)
