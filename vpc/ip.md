@@ -168,4 +168,4 @@ En este ejemplo podemos ver la forma en que la clase es ignorada, y simplemente 
 
 Variable Length Subnet Masking o Máscara de subred de longitud variable. Aqui podremos poner en práctica todo lo aprendido con un ejemplo en que se le hacen **subredes a las subredes** ahorrándonos el desperdicio de direcciones.
 
-
+![vlsm_example](vlsm_example.jpg)
