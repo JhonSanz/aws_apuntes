@@ -66,6 +66,7 @@ En la imagen podemos ver que las redes públicas tienen en su Route Table MAIN, 
 6. Volvemos a las tablas de enrutamiento, seleccionamos la tabla de enrutamiento privada
 7. Vamos a rutas y editar, agregamos una nueva ruta
 8. Asignamos la ruta de internet 0.0.0.0/0 al target Nat gateway, y ahí seleccionamos el que creamos previamente
+9. **Esto tiene costo** así que cuidado ⚠️
 
 # Security Groups
 1. Actuan como un firewall virtual. Seleccionamos la opción de crear security group

@@ -28,3 +28,8 @@ Para solucionar ese error tenemos que situar primero nuestra regla de denegació
 
 ![acl_ex_1_fixed](img/acl_ex_1_fixed.png)
 
+# VPC Peering
+
+Sirve para conectar VPC diferentes entre si y permitir la comunicación
+
+[Continuar el tutorial aqui](https://www.youtube.com/watch?v=g2JOHLHh4rI&t=66m31s)
