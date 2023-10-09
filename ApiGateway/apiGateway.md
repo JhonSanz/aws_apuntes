@@ -87,7 +87,7 @@ Ahora podemos disfrutar de nuestra lambda.
 Algo **importante** que se me ocurrió fue limitar el tráfico para que solo pueda ser accedida mi API desde mi página web. Para esto es necesario crear una **REST API** en lugar de una HTTP API, ya que la primera permite asignar policies.
 
 
-### Example: Deny API traffic based on source IP address or range
+### [Example: Deny API traffic based on source IP address or range](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-resource-policies-examples.html#apigateway-resource-policies-source-ip-address-vpc-example)
 
 The following example resource policy denies (blocks) incoming traffic to an API from two specified source IP address blocks.
 
