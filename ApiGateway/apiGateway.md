@@ -29,12 +29,36 @@ Utilizaremos este código para identificar el tipo de petición y realizar una a
 
 ```python
 import json
+import boto3
+from boto3.dynamodb.conditions import Key, Attr
+import uuid
+
 
 def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('likes_counter')
+
     if event["requestContext"]["http"]["method"] == "POST":
-        # guardar en base de datos xd
-        pass
-    
+        item = json.loads(event["body"])
+        id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f'{item["app"]}&{item["page"]}'))
+
+        try:
+            response = table.update_item(
+                Key={'id': id},
+                UpdateExpression="SET likes = likes + :val",
+                ExpressionAttributeValues={':val': 1},
+                ReturnValues="UPDATED_NEW",
+                ConditionExpression="attribute_exists(id)"
+            )
+        except Exception as e:
+            if "ConditionalCheckFailedException" in str(e):
+                table.put_item(Item={**item, "likes": 1, "id": id})
+            else:
+                return {
+                    'statusCode': 500,
+                    'body': json.dumps(e),
+                }
+
     return {
         'statusCode': 200,
         'body': json.dumps(event),
@@ -57,3 +81,41 @@ Si ejecutamos ahora nuestra lambda no va a funcionar, ya que está intentando co
 6. Agregamos el ARN de nuestra lambda y click en siguiente
 7. le ponemos un nombre a nuestra política y crear
 8. se la asignamos a nuestra lambda
+
+Ahora podemos disfrutar de nuestra lambda.
+
+Algo **importante** que se me ocurrió fue limitar el tráfico para que solo pueda ser accedida mi API desde mi página web. Para esto es necesario crear una **REST API** en lugar de una HTTP API, ya que la primera permite asignar policies.
+
+
+### Example: Deny API traffic based on source IP address or range
+
+The following example resource policy denies (blocks) incoming traffic to an API from two specified source IP address blocks.
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "execute-api:Invoke",
+            "Resource": [
+                "execute-api:/*"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "execute-api:Invoke",
+            "Resource": [
+               "execute-api:/*"
+            ],
+            "Condition" : {
+                "IpAddress": {
+                    "aws:SourceIp": ["192.0.2.0/24", "198.51.100.0/24" ]
+                }
+            }
+        }
+    ]
+}
+```
