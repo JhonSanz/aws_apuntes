@@ -1,6 +1,8 @@
+# SNS
+
 servicio de mensajería adminsitrado por AWS que nos permite comunicarnos entre distinas aplicaciones. Creacion de topics o temas y enviar SMS o emails cuando haya un error u ocurra algún evento.
 
-Se basa en publicador y consumidores. Es una relación de uno a muchos, donde el publicador crea un topic y lo envia a todos los consumidores.
+Se basa en publicador y consumidores. Es una relación de uno a muchos, donde el publicador crea un topic y envia **EL MISMO MENSAJE** a todos los consumidores.
 
 Aunque parezca que solo sirve para enviar emails o SMS, es posible configurar además de mensaje aplicación-persona, app-app.
 

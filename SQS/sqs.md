@@ -4,7 +4,7 @@ Servicio simple de colas. Ofrece una comunicación basada en mensajes asíncrono
 
 Imaginemos un conjunto de dispositivos IOT los cuales producen muchos eventos y queremos procesarlos.
 
-El concepto de cola permanece igual, lo que primero entra es lo primero que sale. Dentro de la cola se almacenan mensajes con la información relevante. Los producers encolan y los consumidores desencolan. Esto significa que el servicio se asegura de que el mensaje fue entregado.
+El concepto de cola permanece igual, lo que primero entra es lo primero que sale. Dentro de la cola se almacenan mensajes con la información relevante. Los producers encolan y los consumidores desencolan, sin necesidad de que el emisor sepa si se entregó, porque esto **favorece** los procesos asíncronos y es el emisor **quien se encarga de extraer los mensajes de la cola**. 
 
 ![core_concepts](core_concepts.png)
 
