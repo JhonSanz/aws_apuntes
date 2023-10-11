@@ -37,3 +37,5 @@ Tenemos un topic y 3 subscribers, el numero 1 le interesa recibir todo el tráfi
 ---
 
 Una vez creadas todas estas cosas vamos a topics lo seleccionamos y le damos a publish message. En el ejemplo de SMS recibiremos lo que pongamos en el formulario.
+
+Típicamente este servicio puede intregrarse con SQS para enviar mensajues identicos a diferentes colas para que se haga algún procesamiento especóifico.
