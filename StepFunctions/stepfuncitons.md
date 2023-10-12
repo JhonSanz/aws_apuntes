@@ -21,3 +21,10 @@ aqui tenemos la versión en StepFunction, la cual funciona como un diagrama de f
 soluciona el problema de la trazabilidad/monitoreo y el manejo de errores, ya que estos caen a algun estado en el diagrama y podemos facilmente poner una lambda que lo maneje.
 
 Como todo tiene un precio, exactamente ese es uno de los inconvenientes de utilizar el StepFunction, ya que cuesta mucho mas que utilziar servicios de bajo nivel. También no es tan claro ver las partes de la aplicación como en la arquitectura
+
+---
+
+Como siempre, todo depende de las necesidades. Aqui hay un artículo interesante sobre eso 
+
+
+https://theburningmonk.com/2020/08/choreography-vs-orchestration-in-the-land-of-serverless/
