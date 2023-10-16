@@ -4,6 +4,7 @@
 - [serverless examples](https://github.com/amazon-archives/serverless-app-examples/blob/master/python/hello-world-python3/lambda_function.py)
 - [aws-copilot-cli](https://aws.github.io/copilot-cli/)
 - [service discovery](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html)
+- [certification](https://aws.amazon.com/es/certification/)
 
 ![important_services](important_services.png)
 
