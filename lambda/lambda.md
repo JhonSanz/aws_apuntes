@@ -110,3 +110,7 @@ Este servicio fue pensado para ejcutar tareas pequeñas, por lo tanto tiene limi
 También está limitado el payload del evento a 6MB.
 
 Hay un límite del archivo zip que puede ser subido a almbda, 50MB para subir 250MB para descomprimir
+
+### Lambda desde imagen docker
+
+- [lambda docker](https://docs.aws.amazon.com/lambda/latest/dg/python-image.html#python-image-instructions)
