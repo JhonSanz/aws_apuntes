@@ -36,3 +36,11 @@ También tenemos la opción de utilziar el aws SDK para llamar los enpoints de c
 ### Triggers
 
 como muchos de los servicios, este también puede integrarse a aws lambda para gestionar los eventos. Por ejemplo un usuario se registró, entonces le envairemos un correo dándole la bienvenida 🙂
+
+---
+
+### Authorizing APi gateway routes
+positions-backend-authorizer
+- https://www.youtube.com/watch?v=oFSU6rhFETk
+- https://www.youtube.com/watch?v=Nig0T3Gba8s
+- https://bobbyhadz.com/blog/aws-cdk-api-authorizer
