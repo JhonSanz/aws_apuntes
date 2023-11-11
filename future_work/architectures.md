@@ -17,3 +17,4 @@
 - [aws practice exams 2](https://aws.amazon.com/certification/certified-developer-associate/?c=sec&sec=resources)
 - [aws practice exams 3](https://aws.amazon.com/certification/certification-prep/?nc2=sb_ce_ep)
 - [aws real questions](https://explore.skillbuilder.aws/learn/course/16817/play/85968/aws-certified-cloud-practitioner-preguntas-de-practica-oficiales-clf-c02-espanol-latam)
+
