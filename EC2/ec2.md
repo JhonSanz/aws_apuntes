@@ -98,7 +98,4 @@ Por defecto las instancias no tienen acceso a otros recursos de AWS. Por lo cual
 
 Esto es muy importante ya que si desplegamos una aplicación que necesite acceder a otros servicios puede presentar errores debido a falta de permisos.
 
-
-# Load balancers
-
 # AutoScalling
