@@ -16,14 +16,30 @@ Como vemos, los usuarios en lugar de acceder a las isntancias de EC2, acceden al
 
 ---
 
-## Tipos
+## Tipos de balanceadores
 
 Recordando las clases de redes, sabemos que las comunicaciones se dan a través de protocolos que fluyen a través del modelo OSI, el cual cuenta con 7 capas.
+
+- Aplicación
+- Presentación
+- Sesión
+- Transporte
+- Red
+- Enlace
+- Física
 
 Los balanceadores de carga se enfocan en alguna de ellas. Por ejemplo
 
 - Aplication Load Balancer
 - Network Load Balancer
 - Gateway Load Balancer
+
+#### Application load balancer
+
+La capa de aplicación se encarga de ofrecer al usuario final una interfaz de comunicación hacia las demás capas, permitiendo ejecutar protocolos de red aquí, tales como HTTP, SMTP, SSL etc.
+
+Es aquí donde se inicia la comunicación, conectando al usuario final mediante un programa con los protocolos y enviando la información a las siguientes capas.
+
+
 
 https://www.youtube.com/watch?v=bCS9m5RVPyo
