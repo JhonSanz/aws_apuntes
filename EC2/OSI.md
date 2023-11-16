@@ -33,3 +33,6 @@ La capa de transporte es compleja y crítica. Se encarga de dividir nuestro trá
 La capa de red se encarga de descubrir las rutas, los routers, el camino que debe transitar nuestra información. Aqui se involucran los demás elementos de la red y la forma en que todo interactua.
 
 Es decir, no es que las capas funcionen dentro del host como tal, al contrario, la descripción de la capa y de el modelo describen el comportamiento general de todo el sistema de comunicación como un todo. Es por eso que es importante entender que en la capa de red se incluye todo el tema de switching, routing etc.
+
+### Data link layer
+
