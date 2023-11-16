@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=bCS9m5RVPyo
+
 # AWS Load balancers
 
 Imaginemos que creamos un juego el cual desplegamos en AWS. Nuestra aplicación vive en una instancia de EC2.
