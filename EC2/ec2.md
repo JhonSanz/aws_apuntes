@@ -2,7 +2,13 @@
 
 Permite crear maquinas virutales en AWS. EC2 significa Elastic Compute Cloud. Donde el término elástico significa que esta tecnología permite crecer o reducir instantáneamente los recursos basado en los requermientos de una aplición específica. También es posible la replicación de instancias para lograr un efecto similiar, estos dos conceptos serán tratados a profuniddad mas adelante.
 
-Por su puesto existen las configuraciones para firewall (security groups), direccionamiento y subredes, balanceadores de carga etc.
+Por su puesto existen las configuraciones para firewall (security groups), direccionamiento y subredes, balanceadores de carga etc. Ya que sin el balanceador de carga tendríamos dos instancias individuales con direcciones IP diferentes, y eso es mas bien un error.
+
+![mywebsite.png](mywebsite.png)
+
+Entonces se situa el balanceador y las instancias quedan en una red privada, dejando úncamente el balanceador expuesto.
+
+El uso de balanceadores de carga favorece la disponibilidad ya que permite escalar la cantidad de instancias simplemente agregandolas al target group, al igual que la disponibilidad, ya que si una de estas instancias se cae simplemente no se tendrá en cuenta para redirigir el tráfico, ya que siempre se pide una healtcheck de la instancia para hacerlo.
 
 ---
 

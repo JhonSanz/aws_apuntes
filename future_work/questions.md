@@ -11,6 +11,9 @@
 - ver diferencias entre cloudwatch , cloudtrail, quicksight y x-ray
 - ver trusted advisor, aws organizations, systems manager, cloud map, aws organizations
 - ver EBS, CDN, NAT gateway, PCI compilant, autoscaling
+- ver amazon inspector, aws trusted advisor services.
+- aws shield, aws config, lightsail, aws web application firewall (WAF)
+- aws glacier
 
 - A Disaster Recovery Strategy on AWS should be based on launching resources in a separate
 - Which of the following statements about scalability is most accurate? Choose 2 answers from the options given below

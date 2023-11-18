@@ -44,3 +44,11 @@ Entocnes el balanceador decide hacia donde va el tráfico, velando por las carac
 ---
 
 Algo importante es el mecanismo de balanceo, hay cientos de formas de hacerlo. Pero aquí lo importante es tener en cuenta que para el ALB nuestras peticiones pueden enviarse a distintos servidores dependiendo de los headers, domain etc. En cambio, para el ejemplo de streaming con el NLB se esperaría que para cada usuario el balanceo se diera para un servidor en cada caso, distruyendo a los usuarios en los servidores disponibles.
+
+
+algunos mecanismos que existen son
+
+- Round Robin
+- Load based
+- Resource based
+
