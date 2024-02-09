@@ -8,6 +8,8 @@ Es aquí donde se inicia la comunicación, conectando al usuario final mediante 
 
 Entonces el usuario abre su navegador, y escribe https://example.com lo cual crea una petición https por nosotros, y en este momento se accede a la capa de aplicación.
 
+Es decir, aqui se decide que protocolo se va a utilizar para acceder al servidor
+
 ### Presentation layer
 
 Esta capa se encarga de convertir la información a un formato leíble por otra entidad informática. Es decir que todo tipo de información que se inicia en la petición de la capa anterior debe ser debidamente formateada, codificada, convertida, en formatos transmisibles y entendibles por otro sistema.

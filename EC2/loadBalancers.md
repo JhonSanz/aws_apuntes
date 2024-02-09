@@ -35,7 +35,7 @@ Este tipo de balanceadores es costoso ya que tiene muchas capacidades de manejo,
 
 ## Network load balancer
 
-Dado que este balanceador actúa sobre la capa de transporte, y como sabemos, esta se encarga de dividir la información en paquetes y se asegura que la data se transmita entre el cliente y el servidor sin errores. 
+Dado que este balanceador actúa sobre la **capa de transporte**, y como sabemos, esta se encarga de dividir la información en paquetes y se asegura que la data se transmita entre el cliente y el servidor sin errores. 
 
 El balanceador se encarga de que haya baja latencia, alta transmisión de datos etc. Este tipo de balanceadores es común verlo en servidores de juegos y servicios de streaming, realtime etc.
 
